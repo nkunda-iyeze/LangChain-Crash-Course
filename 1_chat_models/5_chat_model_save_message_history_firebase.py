@@ -3,7 +3,7 @@
 from dotenv import load_dotenv
 from google.cloud import firestore
 from langchain_google_firestore import FirestoreChatMessageHistory
-from langchain_openai import ChatOpenAI
+from langchain_mistralai import ChatMistralAI
 
 """
 Steps to replicate this example:
@@ -23,9 +23,9 @@ Steps to replicate this example:
 load_dotenv()
 
 # Setup Firebase Firestore
-PROJECT_ID = "langchain-demo-abf48"
+PROJECT_ID = "chat-modal-langchain"
 SESSION_ID = "user_session_new"  # This could be a username or a unique ID
-COLLECTION_NAME = "chat_history"
+COLLECTION_NAME = "chat-history"
 
 # Initialize Firestore Client
 print("Initializing Firestore Client...")
@@ -42,7 +42,7 @@ print("Chat History Initialized.")
 print("Current Chat History:", chat_history.messages)
 
 # Initialize Chat Model
-model = ChatOpenAI()
+model = ChatMistralAI()
 
 print("Start chatting with the AI. Type 'exit' to quit.")
 

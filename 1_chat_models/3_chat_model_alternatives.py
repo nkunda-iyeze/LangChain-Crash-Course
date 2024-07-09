@@ -1,6 +1,5 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_anthropic import ChatAnthropic
-from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 
@@ -12,15 +11,6 @@ messages = [
     HumanMessage(content="What is 81 divided by 9?"),
 ]
 
-
-# ---- LangChain OpenAI Chat Model Example ----
-
-# Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
-
-# Invoke the model with messages
-result = model.invoke(messages)
-print(f"Answer from OpenAI: {result.content}")
 
 
 # ---- Anthropic Chat Model Example ----
